@@ -17,6 +17,7 @@ jobs:
       uses: docker/setup-qemu-action@v2
 
     - name: Set up Docker Buildx
+      id: buildx
       uses: docker/setup-buildx-action@v2
 
     - name: Login to Docker Hub
@@ -31,5 +32,4 @@ jobs:
         context: .
         platforms: linux/arm/v7,linux/arm64
         push: true
-        tags: ${{ secrets.DOCKER_USERNAME }}/hello_world:latest
-
+        tags: ${{ secrets.DOCKER_USERNAME }}/rpi5_build_test:latest

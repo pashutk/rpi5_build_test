@@ -1,9 +1,9 @@
 FROM rust:latest
 
-WORKDIR /usr/src/hello_world
+WORKDIR /usr/src/rpi5_build_test
 COPY . .
 
 RUN cargo build --release
 
-CMD ["./target/release/hello_world"]
-
+WORKDIR /usr/src/rpi5_build_test/target/release/
+CMD ["./rpi5_build_test"]
